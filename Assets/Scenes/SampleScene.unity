@@ -182,6 +182,7 @@ GameObject:
   - component: {fileID: 213243806}
   - component: {fileID: 213243805}
   - component: {fileID: 213243804}
+  - component: {fileID: 213243807}
   m_Layer: 0
   m_Name: Animation
   m_TagString: Untagged
@@ -276,6 +277,18 @@ Transform:
   m_Father: {fileID: 1410115384}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &213243807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213243800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40fd02664fd63a747adfb0f60829ed97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -13987,6 +14000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerController: {fileID: 1410115387}
+  _playerAnimations: {fileID: 213243807}
 --- !u!114 &1410115387
 MonoBehaviour:
   m_ObjectHideFlags: 0

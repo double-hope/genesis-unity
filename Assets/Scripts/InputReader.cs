@@ -5,6 +5,7 @@ using UnityEngine;
 public class InputReader : MonoBehaviour
 {
     [SerializeField] private PlayerController _playerController;
+    [SerializeField] private PlayerAnimations _playerAnimations;
     private Vector2 _direction;
     private void Update()
     {
@@ -14,5 +15,6 @@ public class InputReader : MonoBehaviour
     private void FixedUpdate()
     {
         _playerController.MoveXY(_direction);
+        _playerAnimations.Walk(_direction);
     }
 }
