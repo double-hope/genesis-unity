@@ -13,6 +13,6 @@ public class InputReader : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _playerController.Move(_direction);
+        _playerController.MoveXY(_direction);
     }
 }
