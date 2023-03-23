@@ -131,10 +131,10 @@ TextureImporter:
       name: Water tray_0
       rect:
         serializedVersion: 2
-        x: 64
-        y: 3
-        width: 32
-        height: 13
+        x: 0
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,10 +152,10 @@ TextureImporter:
       name: Water tray_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 3
-        width: 32
-        height: 13
+        x: 16
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,10 +173,10 @@ TextureImporter:
       name: Water tray_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 3
-        width: 32
-        height: 13
+        x: 32
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,6 +186,69 @@ TextureImporter:
       bones: []
       spriteID: 934fc3cf7abcf6447a4e60c70873312c
       internalID: -1694871719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water tray_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c065d873e59c5ef4eaeea55846a153d7
+      internalID: 1443380352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water tray_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9991984cb21e3a049b48ab510ea880be
+      internalID: -611196157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water tray_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1016b45fe5abb1d4588040e44da6b63d
+      internalID: -624766498
       vertices: []
       indices: 
       edges: []
@@ -201,8 +264,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Water tray_3: 1443380352
       Water tray_1: -106657630
       Water tray_0: 1550907283
+      Water tray_4: -611196157
+      Water tray_5: -624766498
       Water tray_2: -1694871719
   spritePackingTag: 
   pSDRemoveMatte: 0
