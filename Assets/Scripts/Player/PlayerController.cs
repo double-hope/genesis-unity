@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Player
@@ -16,9 +14,8 @@ namespace Player
 
         public void MoveXY(Vector2 direction)
         {
-            int isDiagonal = direction.x * direction.y != 0 ? 0 : 1;
             Vector2 velocity = _rigidbody.velocity;
-            velocity = direction * (isDiagonal * _movementSpeed);
+            velocity = direction * _movementSpeed;
             _rigidbody.velocity = velocity;
         }
         
