@@ -1,8 +1,13 @@
-using InputReader;
+using Core.Services.Updater;
 using UnityEngine;
 
-public class ExternalDevicesInputReader : IEntityInputSource
+namespace  InputReader
 {
-    public float HorizontalDirection => Input.GetAxisRaw("Horizontal");
-    public float VerticalDirection => Input.GetAxisRaw("Vertical");
+    public class ExternalDevicesInputReader : IEntityInputSource
+    {
+        public float HorizontalDirection => Input.GetAxisRaw("Horizontal");
+        public float VerticalDirection => Input.GetAxisRaw("Vertical");
+         
+    }
+
 }
