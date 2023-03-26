@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
-public class PlayerAnimations : MonoBehaviour
+public class Animations : MonoBehaviour
 {
     private Animator _animator;
     private static readonly int MovementX = Animator.StringToHash("MovementX");

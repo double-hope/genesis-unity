@@ -1,4 +1,4 @@
-using Player;
+using InputReader;
 using UnityEngine;
 
 public class ExternalDevicesInputReader : IEntityInputSource
