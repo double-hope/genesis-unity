@@ -1,5 +1,6 @@
 using Core.Movement.Controller;
 using Core.Movement.Data;
+using StatsSystem;
 using UnityEngine;
 using Animation = Core.Animation.Animation;
 
@@ -12,10 +13,10 @@ namespace Player
         [SerializeField] private DirectionalMovementData _directionalMovementData;
         private Rigidbody2D _rigidbody;
         private DirectionalMover _directionalMover;
-        private void Start()
+        public void Initialize(IStatValueGiven statValueGiven)
         {
             _rigidbody = GetComponent<Rigidbody2D>();
-            _directionalMover = new DirectionalMover(_rigidbody, _directionalMovementData);
+            _directionalMover = new DirectionalMover(_rigidbody, _directionalMovementData, statValueGiven);
         }
 
 
