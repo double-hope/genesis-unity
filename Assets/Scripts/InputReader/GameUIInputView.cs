@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Player
+namespace InputReader
 {
     public class GameUIInputView : MonoBehaviour, IEntityInputSource
     {

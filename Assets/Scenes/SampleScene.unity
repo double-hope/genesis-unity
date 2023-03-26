@@ -121726,7 +121726,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8b697dacad6d046acf406656c5ec03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 5
+  _animation: {fileID: 213243807}
+  _directionalMovementData:
+    <MovementSpeed>k__BackingField: 5
 --- !u!50 &1410115388
 Rigidbody2D:
   serializedVersion: 4
@@ -121821,7 +121823,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -127874,7 +127876,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerController: {fileID: 1410115387}
-  _playerAnimations: {fileID: 213243807}
   _gameUIInputView: {fileID: 1234170387}
 --- !u!4 &1757804911
 Transform:

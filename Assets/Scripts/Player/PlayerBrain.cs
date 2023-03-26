@@ -1,24 +1,26 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using Core.Services.Updater;
 using UnityEngine;
+using InputReader;
 
 namespace Player
 {
-    public class PlayerBrain
+    public class PlayerBrain : IDisposable
     {
         private readonly PlayerController _playerController;
-        private readonly PlayerAnimations _playerAnimations;
         private readonly List<IEntityInputSource> _inputSources;
-        public PlayerBrain(PlayerController playerController, PlayerAnimations playerAnimations, List<IEntityInputSource> inputSources)
+        public PlayerBrain(PlayerController playerController, List<IEntityInputSource> inputSources)
         {
             _playerController = playerController;
-            _playerAnimations = playerAnimations;
             _inputSources = inputSources;
+            ProjectUpdater.Instance.FixedUpdateCalled += OnFixedUpdate;
         }
 
-        public void OnFixedUpdate()
+        private void OnFixedUpdate()
         {
             _playerController.MoveXY(new Vector2(GetHorizontalDirection(), GetVerticalDirection()));
-            _playerAnimations.Walk(new Vector2(GetHorizontalDirection(), GetVerticalDirection()));
+            _playerController.UpdateAnimation(new Vector2(GetHorizontalDirection(), GetVerticalDirection()));
         }
 
         private float GetHorizontalDirection()
@@ -44,5 +46,8 @@ namespace Player
 
             return 0;
         }
+
+        public void Dispose() => ProjectUpdater.Instance.FixedUpdateCalled -= OnFixedUpdate;
+        
     }
 }

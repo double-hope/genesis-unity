@@ -1,30 +1,57 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using Core.Services.Updater;
 using Player;
 using UnityEngine;
+using InputReader;
+using StatsSystem;
 
 namespace Core
 {
     public class GameLevelInitializer : MonoBehaviour
     {
         [SerializeField] private PlayerController _playerController;
-        [SerializeField] private PlayerAnimations _playerAnimations;
         [SerializeField] private GameUIInputView _gameUIInputView;
 
         private ExternalDevicesInputReader _externalDevicesInput;
-        private PlayerBrain _playerBrain;
+        private PlayerSystem _playerSystem;
+        private ProjectUpdater _projectUpdater;
+
+        private List<IDisposable> _disposables;
+
+        private bool _onPause;
+        
         private void Awake()
         {
+            _disposables = new List<IDisposable>();
+            if (ProjectUpdater.Instance == null)
+                _projectUpdater = new GameObject().AddComponent<ProjectUpdater>();
+            else
+                _projectUpdater = ProjectUpdater.Instance as ProjectUpdater;
+            
             _externalDevicesInput = new ExternalDevicesInputReader();
-            _playerBrain = new PlayerBrain(_playerController, _playerAnimations, new List<IEntityInputSource>
+            
+            _playerSystem = new PlayerSystem(_playerController, new List<IEntityInputSource>
             {
                 _gameUIInputView,
                 _externalDevicesInput
             });
+            
+            _disposables.Add(_playerSystem);
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
-            _playerBrain.OnFixedUpdate();
+            if (Input.GetKeyDown(KeyCode.Escape))
+                _projectUpdater.IsPaused = !_projectUpdater.IsPaused;
+        }
+
+        private void OnDestroy()
+        {
+            foreach (var disposable in _disposables)
+            {
+                disposable.Dispose();
+            }
         }
     }
 }
